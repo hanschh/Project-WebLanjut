@@ -21,7 +21,7 @@ class Crud extends Migration
                         ],
                         'no_rekening' => [
                         'type' => 'VARCHAR',
-                        'constraint' => 11,
+                        'constraint' => 25,
                         ],
                         'nominal_uang' => [
                         'type' => 'VARCHAR',
