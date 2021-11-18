@@ -25,7 +25,7 @@ class Crud extends Migration
                         ],
                         'nominal_uang' => [
                         'type' => 'VARCHAR',
-                        'constraint' => 150,
+                        'constraint' => 100,
                         'null' => true
                         ]
                     ]);
@@ -33,8 +33,6 @@ class Crud extends Migration
             $this->forge->addKey('id', true);
 			$this->forge->createTable('money');
     }
-
-
 	public function down()
 	{
 			$this->forge->dropTable('money');
