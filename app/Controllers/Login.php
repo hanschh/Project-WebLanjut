@@ -27,7 +27,7 @@ class Login extends BaseController
 			return redirect()->to(base_url('/'));
 		} else {
 			session()->setFlashdata('gagal', 'Ada Salah');
-			return redirect()->to(base_url('/loginuser'));
+			return redirect()->to(base_url('/login'));
 		}
 	}
 }
