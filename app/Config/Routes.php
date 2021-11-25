@@ -32,7 +32,9 @@ $routes->setAutoRoute(true);
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
 $routes->get('/', 'Crud::index');
-
+$routes->get('/loginuser', 'Templating::login');
+$routes->get('/register', 'Templating::register');
+$routes->post('/saveRegister', 'Templating::saveRegister');
 /*
  * --------------------------------------------------------------------
  * Additional Routing
