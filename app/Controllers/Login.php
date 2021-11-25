@@ -24,10 +24,10 @@ class Login extends BaseController
 			// session()->set('password', $cek['password']);
 			session()->set('id', $cek['id']);
 			session()->set('username', $cek['username']);
-			return redirect()->to(base_url('/'));
+			return redirect()->to(base_url('/admin'));
 		} else {
 			session()->setFlashdata('gagal', 'Ada Salah');
-			return redirect()->to(base_url('/login'));
+			return redirect()->to(base_url('/'));
 		}
 	}
 }
