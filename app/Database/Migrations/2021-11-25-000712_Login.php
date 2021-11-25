@@ -21,7 +21,7 @@ class Login extends Migration
 			],
 			'password'       => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '8',
+				'constraint'     => '80',
 			],
 			'email'       => [
 				'type'           => 'VARCHAR',
