@@ -5,7 +5,7 @@
         </div>
 
         <div class="card-body">
-            <form method="post" action="<?= base_url('datacontroller/update/' . $data->id) ?>">
+            <form method="post" action="<?= base_url('crud/update/' . $data->id) ?>">
                 <div class="form-group">
                     <label for="nama" class="col-form-label">Nama</label>
                     <input type="text" class="form-control" name="nama" value="<?= $data->nama ?>">
@@ -22,6 +22,6 @@
         <div class="text-right">
             <div class="card-footer">
                 <INPUT TYPE="button" class="btn btn-secondary" VALUE="Close" onClick="history.go(-1);">
-                <button type="submit" class="btn btn-primary"><i class = "fas fa-paper-plane"></i> Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </div>

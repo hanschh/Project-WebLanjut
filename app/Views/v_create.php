@@ -5,7 +5,7 @@
         </div>
 
         <div class="card-body">
-            <form method="post" action="<?= base_url('datacontroller/create'); ?>">
+            <form method="post" action="<?= base_url('crud/create'); ?>">
                 <div class="form-group">
                     <label for="nama" class="col-form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama">
@@ -23,7 +23,7 @@
         <div class="card-footer">
             <p>
                 <INPUT TYPE="button" class="btn btn-secondary" VALUE="Close" onClick="history.go(-1);">
-                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
+                <button type="submit" class="btn btn-primary">Submit</button>
         </div>
         </p>
     </div>
