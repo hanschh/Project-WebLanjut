@@ -182,7 +182,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="/admin/crud" class="nav-link">
+                            <a href="/admin/data" class="nav-link">
                                 <i class="nav-icon fas fa-book-open"></i>
                                 <p>
                                     Data Tabungan
@@ -251,12 +251,11 @@
                             </tr>
                         <?php } ?>
                     </tbody>
-
                 </table>
             </div>
         </div>
         <div class=" container text-right">
-            <a class="btn btn-primary" href="<?= base_url('datacontroller/form_create') ?>">Create</a>
+            <a class="btn btn-primary" href="<?= base_url('datacontroller/form_create') ?>"><i class = "fas fa-plus"></i> Create</a>
         </div><br>
     </div>
 </div>
@@ -266,7 +265,7 @@
         </div>
         <!-- /.content-wrapper -->
         <footer class="main-footer">
-            <strong>Copyright &copy; Praktikum Web Lanjut
+            <strong>Copyright &copy; Money.inc </strong>
         </footer>
 
         <!-- Control Sidebar -->

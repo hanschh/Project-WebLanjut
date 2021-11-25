@@ -23,7 +23,7 @@
         <div class="card-footer">
             <p>
                 <INPUT TYPE="button" class="btn btn-secondary" VALUE="Close" onClick="history.go(-1);">
-                <button type="submit" class="btn btn-primary">Submit</button>
+                <button type="submit" class="btn btn-primary"><i class="fas fa-paper-plane"></i> Submit</button>
         </div>
         </p>
     </div>

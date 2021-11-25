@@ -22,7 +22,7 @@ class Login extends BaseController
 			session()->set('email', $cek['email']);
 			session()->set('password', $cek['password']);
 			
-			return redirect()->to(base_url('/'));
+			return redirect()->to(base_url('/admin'));
 		}
 		// else if (($cek['username'] == $username) && ($cek['password'] == $password))
 		// {
@@ -33,7 +33,7 @@ class Login extends BaseController
 		// }
 		else {
             session()->setFlashdata('Login Gagal');
-			return redirect()->to(base_url('/loginuser'));
+			return redirect()->to(base_url('/'));
 		}
 	}
 }
