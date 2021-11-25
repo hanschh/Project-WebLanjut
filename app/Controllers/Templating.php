@@ -37,13 +37,13 @@ class Templating extends BaseController
 	{
 		$request = service('request');
 		$data = [
-			'username' => $request->getVar('username'),
+			'fullname' => $request->getVar('fullname'),
             'password' => $request->getVar('password'),
 			'email' => $request->getVar('email'),
 			
 		];
 		$this->m_user->insert($data);
-		return redirect()->to('/register');
+		return redirect()->to('/loginuser');
 	}
 }
 
