@@ -2,7 +2,7 @@
 
 namespace App\Controllers;
 
-class Crud extends BaseController
+class DataController extends BaseController
 {
     public function index()
     {
@@ -32,16 +32,16 @@ class Crud extends BaseController
     function create()
     {
         $this->md->insert($this->request->getPost());
-        return redirect()->to(base_url('/'));
+        return redirect()->to(base_url('/admin/data'));
     }
     function update($kd)
     {
         $this->md->update($kd, $this->request->getPost());
-        return redirect()->to(base_url('/'));
+        return redirect()->to(base_url('/admin/data'));
     }
     function delete($kd)
     {
         $this->md->delete($kd);
-        return redirect()->to(base_url('/'));
+        return redirect()->to(base_url('/admin/data'));
     }
 }
