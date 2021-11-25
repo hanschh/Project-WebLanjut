@@ -12,8 +12,8 @@ class M_User extends Model
             ->where(array('email' => $email, 'password' => $password))
             ->get()->getRowArray();
     }
-    // protected $table                = 'login';
-    // protected $primaryKey           = 'username';
-    // protected $allowedFields        = ['username', 'password', 'email'];
-    // protected $useTimestamp            = true;
+    protected $table                = 'login';
+    protected $primaryKey           = 'username';
+    protected $allowedFields        = ['username', 'password', 'email'];
+    protected $useTimestamp            = true;
 }
