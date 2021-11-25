@@ -5,7 +5,7 @@
         </div>
 
         <div class="card-body">
-            <form method="post" action="<?= base_url('crud/create'); ?>">
+            <form method="post" action="<?= base_url('datacontroller/create'); ?>">
                 <div class="form-group">
                     <label for="nama" class="col-form-label">Nama</label>
                     <input type="text" class="form-control" id="nama" name="nama">

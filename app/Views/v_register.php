@@ -5,7 +5,7 @@
 <body class="hold-transition register-page">
 <div class="register-box">
   <div class="register-logo">
-    <a href="assets/adminlte/index2.html"><b>Admin</b>LTE</a>
+    <a href="assets/adminlte/index2.html"><b>Money.</b>inc</a>
   </div>
 
   <div class="card">

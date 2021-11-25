@@ -21,14 +21,14 @@ class Login extends BaseController
 			session()->set('username', $cek['username']);
 			session()->set('password', $cek['password']);
 			session()->set('email', $cek['email']);
-			return redirect()->to(base_url('home'));
+			return redirect()->to(base_url('/'));
 		}
 		else if (($cek['username'] == 'admin') && ($cek['password'] == '121213'))
 		{
 			session()->set('username', $cek['username']);
 			session()->set('password', $cek['password']);
 			session()->set('email', $cek['email']);
-			return redirect()->to(base_url('input'));
+			return redirect()->to(base_url('admin'));
 		}
 		else {
 			return redirect()->to(base_url('/'));

@@ -11,6 +11,13 @@ class Templating extends BaseController
 	{
 		$this->m_user = new M_User();
 	}
+	public function index()
+	{
+		$data = [
+			'title' => "Admin"
+		];
+        return view('v_admin', $data);
+	}
     public function login()
 	{
 		$data = [
