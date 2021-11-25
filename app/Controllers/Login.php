@@ -12,26 +12,27 @@ class Login extends BaseController
 	public function login_action()
 	{
 		$user = new Login_user();
-		$username = $this->request->getPost('Username');
+		$email = $this->request->getPost('Email');
 		$password = $this->request->getPost('Password');
 
 		$cek = $user->get_data($username, $password);
-		if (($cek['username'] == 'user') && ($cek['password'] == '121212'))
+		if (($cek['email'] == $email) && ($cek['password'] == $password))
 		{
-			session()->set('username', $cek['username']);
-			session()->set('password', $cek['password']);
 			session()->set('email', $cek['email']);
-			return redirect()->to(base_url('home'));
-		}
-		else if (($cek['username'] == 'admin') && ($cek['password'] == '121213'))
-		{
-			session()->set('username', $cek['username']);
 			session()->set('password', $cek['password']);
-			session()->set('email', $cek['email']);
-			return redirect()->to(base_url('input'));
-		}
-		else {
+			
 			return redirect()->to(base_url('/'));
+		}
+		// else if (($cek['username'] == $username) && ($cek['password'] == $password))
+		// {
+		// 	session()->set('username', $cek['username']);
+		// 	session()->set('password', $cek['password']);
+		// 	session()->set('email', $cek['email']);
+		
+		// }
+		else {
+            session()->setFlashdata('Login Gagal');
+			return redirect()->to(base_url('/loginuser'));
 		}
 	}
 }
