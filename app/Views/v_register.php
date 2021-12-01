@@ -40,8 +40,8 @@
           </div>
           <div class="row">
             <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block">Register</button>
+            <div class="col-5">
+              <button type="submit" class="btn btn-primary btn-block"><i class="fas fa-check-circle"></i> Register</button>
             </div>
             <!-- /.col -->
           </div>
