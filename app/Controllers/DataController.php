@@ -1,13 +1,20 @@
 <?php
 
 namespace App\Controllers;
+use App\Models\UsersModel;
+use App\Models\M_Money;
 
 class DataController extends BaseController
 {
+    public function __construct (){
+        $this->m_money= new M_Money();
+        $this->m_user= new UsersModel();
+
+    }
     public function index()
     {
-        $data['data'] = $this->md->findAll();
-        $data['title'] = 'Sistem Informasi Tabungan';
+        $data['data'] = $this->m_money->findAll();
+        $data['title'] = 'Data Nasabah';
         echo view('header', $data);
         echo view('v_money', $data);
         echo view('footer', $data);
@@ -22,7 +29,7 @@ class DataController extends BaseController
     }
     function form_update($kd)
     {
-        $data['data'] = $this->md->find($kd);
+        $data['data'] = $this->m_money->find($kd);
         $data['title'] = 'Update Data';
         echo view('header', $data);
         echo view('v_update', $data);
@@ -31,17 +38,17 @@ class DataController extends BaseController
     //process
     function create()
     {
-        $this->md->insert($this->request->getPost());
-        return redirect()->to(base_url('/admin/data'));
+        $this->m_money->insert($this->request->getPost());
+        return redirect()->to(base_url('/admin'));
     }
     function update($kd)
     {
-        $this->md->update($kd, $this->request->getPost());
-        return redirect()->to(base_url('/admin/data'));
+        $this->m_money->update($kd, $this->request->getPost());
+        return redirect()->to(base_url('/admin'));
     }
     function delete($kd)
     {
-        $this->md->delete($kd);
-        return redirect()->to(base_url('/admin/data'));
+        $this->m_money->delete($kd);
+        return redirect()->to(base_url('/admin'));
     }
 }
