@@ -13,8 +13,3 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-        <div class="container">
-            <a class="navbar-brand" href="">money.inc</a>
-        </div>
-    </nav>

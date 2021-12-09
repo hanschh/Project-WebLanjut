@@ -17,7 +17,7 @@ if (file_exists(SYSTEMPATH . 'Config/Routes.php')) {
  * --------------------------------------------------------------------
  */
 $routes->setDefaultNamespace('App\Controllers');
-$routes->setDefaultController('Crud');
+$routes->setDefaultController('Home');
 $routes->setDefaultMethod('index');
 $routes->setTranslateURIDashes(false);
 $routes->set404Override();
@@ -31,10 +31,14 @@ $routes->setAutoRoute(true);
 
 // We get a performance increase by specifying the default
 // route since we don't have to scan directories.
-$routes->get('/', 'Crud::index');
-$routes->get('/loginuser', 'Templating::login');
+$routes->get('/', 'Templating::login');
+$routes->get('/dashboard', 'Templating::index');
 $routes->get('/register', 'Templating::register');
 $routes->post('/saveRegister', 'Templating::saveRegister');
+$routes->get('/admin', 'DataController::index');
+$routes->get('/user', 'DataController::indexuser');
+// $routes->get('/logout', 'Auth::logout');
+
 /*
  * --------------------------------------------------------------------
  * Additional Routing
