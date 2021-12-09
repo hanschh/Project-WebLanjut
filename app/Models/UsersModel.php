@@ -21,4 +21,9 @@ class UsersModel extends Model
         $log = $builder->get()->getRow();
         return $log;
     }
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> 49f483481eb8efa084aef888374cf875d7069e9a
 }
