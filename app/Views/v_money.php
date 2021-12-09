@@ -108,6 +108,9 @@
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
+            <div class="container">
+            <a class="btn btn-primary" href="<?= base_url('datacontroller/form_create') ?>"><i class="fas fa-plus"></i> Create</a>
+        </div>
 
 <div class="container pt-3">
 
@@ -148,9 +151,7 @@
                 </table>
             </div>
         </div>
-        <div class="container text-right">
-            <a class="btn btn-primary" href="<?= base_url('datacontroller/form_create') ?>"><i class="fas fa-plus"></i> Create</a>
-        </div><br>
+        <br>
     </div>
 </div>
 </section>
