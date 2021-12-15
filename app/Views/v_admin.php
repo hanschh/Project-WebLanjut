@@ -53,7 +53,7 @@
         </a>
       </li>
       <li class="nav-item">
-              <a href="/auth/logout" class="nav-link">
+              <a href="auth/logout" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i> Logout  
               </a>
             </li>
@@ -136,9 +136,9 @@
               <span class="info-box-icon bg-info elevation-1"><i class="fas fa-dollar-sign"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Saldo Total</span>
+                <span class="info-box-text">Saldo Bank</span>
                 <span class="info-box-number">
-                <?=  $total; ?>
+                Rp. <?=number_format($total, 0, '', '.')  ; ?>,-
                 
               
                 </span>
@@ -154,9 +154,9 @@
               <span class="info-box-icon bg-warning elevation-1"><i class="fas fa-users"></i></span>
 
               <div class="info-box-content">
-                <span class="info-box-text">Members</span>
+                <span class="info-box-text">Nasabah</span>
                 <span class="info-box-number">
-                <?=  $jumlah; ?>
+                <?=  $jumlah; ?> Orang
                 </span>
               </div>
               <!-- /.info-box-content -->
@@ -177,21 +177,7 @@
                   <button type="button" class="btn btn-tool" data-card-widget="collapse">
                     <i class="fas fa-minus"></i>
                   </button>
-                  <div class="btn-group">
-                    <button type="button" class="btn btn-tool dropdown-toggle" data-toggle="dropdown">
-                      <i class="fas fa-wrench"></i>
-                    </button>
-                    <div class="dropdown-menu dropdown-menu-right" role="menu">
-                      <a href="#" class="dropdown-item">Action</a>
-                      <a href="#" class="dropdown-item">Another action</a>
-                      <a href="#" class="dropdown-item">Something else here</a>
-                      <a class="dropdown-divider"></a>
-                      <a href="#" class="dropdown-item">Separated link</a>
-                    </div>
-                  </div>
-                  <button type="button" class="btn btn-tool" data-card-widget="remove">
-                    <i class="fas fa-times"></i>
-                  </button>
+                  
                 </div>
               </div>
               <!-- /.card-header -->

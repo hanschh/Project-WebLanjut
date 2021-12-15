@@ -11,7 +11,16 @@
     <div class="card">
       <div class="card-body register-card-body">
         <p class="login-box-msg">Login to an Account</p>
+        <p>
+        <?php if (!empty(session()->getFlashdata('gagal'))) { ?>
+                  <p class="text-danger">
+                     <?php echo session()->getFlashdata('gagal') ?>
+                    </p>
+               <?php } ?>
+              </p>
+              <p class="text-danger">
         <?= session()->get('pesan') ?>
+        </p>
 
         <form action="auth/login" method="post">
           <div class="input-group mb-3">
@@ -38,6 +47,8 @@
             <!-- /.col -->
           </div>
         </form>
+        
+               
 
       </div>
       <!-- /.form-box -->

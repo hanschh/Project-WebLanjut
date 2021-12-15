@@ -36,6 +36,7 @@ $routes->get('/dashboard', 'Templating::index');
 $routes->get('/register', 'Templating::register');
 $routes->post('/saveRegister', 'Templating::saveRegister');
 $routes->get('/admin', 'DataController::index');
+// $routes->get('/logout', 'Auth::logout');
 
 /*
  * --------------------------------------------------------------------

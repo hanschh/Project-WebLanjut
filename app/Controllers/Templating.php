@@ -16,6 +16,10 @@ class Templating extends BaseController
 
 	public function index()
 	{
+		if (session()->get('email') == '') {
+            session()->setFlashdata('gagal', 'Anda belum login');
+            return redirect()->to(base_url('/'));
+         }
 		$saldo = $this->m_money->findAll();
 		$total=0;
 
@@ -64,6 +68,9 @@ class Templating extends BaseController
 
 	public function login()
 	{
+		if (!session()->get('email') == '') {
+			return redirect()->to(base_url('dashboard'));
+		}
 		return view('v_login');
 	}
 }

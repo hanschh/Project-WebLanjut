@@ -130,7 +130,7 @@
                 </div>
         </div>
         <div class="container">
-            <label type ="text">*Info : Nasabah akan dikenakan bunga sebesar Rp. 5000,- setiap bulan.</label>
+            <label type ="text">*Info : Nasabah akan dikenakan bunga sebesar Rp. 5.000,- setiap bulan.</label>
         </div>
         <div class="card-footer text-right">
             <INPUT TYPE="button" class="btn btn-secondary" VALUE="Back" onClick="history.go(-1);">

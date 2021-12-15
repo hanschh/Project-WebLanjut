@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use CodeIgniter\Controller;
 use App\Models\UsersModel;
-use App\Models\AuthModel;
 
 class Auth extends BaseController
 {
@@ -41,15 +40,20 @@ class Auth extends BaseController
     public function login()
     {
 
-        $model = new AuthModel;
+        $model = new UsersModel;
         $table = 'users';
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
         $row = $model->get_data_login($email, $table);
         var_dump($row);
+        // if ($row != NULL) {
+        //     $cek=['email'=>$email];
+        //     session()->set($cek);
+        //     return redirect()->to(base_url('/dashboard'));
+        // }
         if ($row == NULL) {
             session()->setFlashdata('pesan', 'Email atau Password Salah');
-            return redirect()->to('/');
+            return redirect()->to(base_url('/'));
         }
         if (password_verify($password, $row->password)) {
             $data = array(
@@ -59,18 +63,20 @@ class Auth extends BaseController
 
             );
             session()->set($data);
-            session()->setFlashdata('pesan', 'Berhasil Login');
-            return redirect()->to('/dashboard');
+            session()->setFlashdata('pesan', 'Anda telah melakukan Login');
+            return redirect()->to(base_url('/dashboard'));
         }
-        session()->setFlashdata('pesan', 'Email atau Password Salah');
-        return redirect()->to('/');
+        else{
+            session()->setFlashdata('pesan', 'Email atau Password Salah');
+            return redirect()->to(base_url('/'));
+        }
+        
     }
 
     public function logout()
     {
-        $session = session();
-        $session->destroy();
+        session()->destroy();
         session()->setFlashdata('pesan', 'Berhasil Logout');
-        return redirect()->to('/');
+        return redirect()->to(base_url('/'));
     }
 }

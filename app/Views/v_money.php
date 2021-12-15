@@ -22,7 +22,7 @@
             <!-- Right navbar links -->
             <ul class="navbar-nav ml-auto">
                 <!-- Navbar Search -->
-                
+
                 <li class="nav-item">
                     <a class="nav-link" data-widget="fullscreen" href="#" role="button">
                         <i class="fas fa-expand-arrows-alt"></i>
@@ -34,10 +34,10 @@
                     </a>
                 </li>
                 <li class="nav-item">
-              <a href="/auth/logout" class="nav-link">
-                <i class="nav-icon fas fa-sign-out-alt"></i> Logout  
-              </a>
-            </li>
+                    <a href="/auth/logout" class="nav-link">
+                        <i class="nav-icon fas fa-sign-out-alt"></i> Logout
+                    </a>
+                </li>
             </ul>
         </nav>
         <!-- /.navbar -->
@@ -108,52 +108,55 @@
                     </div><!-- /.row -->
                 </div><!-- /.container-fluid -->
             </div>
-
-<div class="container pt-3">
-
-    <div class="card">
-        <div class="card-header bg-black text-white">
-            <h4 class="card-title" style="text-align: center;">Data Nasabah</h4>
-        </div>
-
-        <div class="card-body">
-            <div class="table-responsive">
-                <table class="table table-bordered table-striped table-hover">
-                    <thead class="table-secondary">
-                        <tr>
-                            <th>No</th>
-                            <th>Nama</th>
-                            <th>Nomor Rekening</th>
-                            <th>Saldo</th>
-                            <th>Bunga</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <?php foreach ($data as $i => $r) { ?>
-                            <tr>
-                                <th scope="row"><?= $i + 1; ?></th>
-                                <td><?= $r['nama']; ?></td>
-                                <td><?= $r['no_rekening']; ?></td>
-                                <td>Rp. <?= $r['nominal_uang']; ?>,-</td>
-                                <td>Rp. 5000,-</td>
-                                <td>
-                                    <a class="btn btn-warning" href="<?= base_url('datacontroller/form_update/' . $r['id']) ?>"><i class="fas fa-edit"></i> Update</a>
-                                    <a class="btn btn-danger" href="<?= base_url('datacontroller/delete/' . $r['id']) ?>"><i class="fas fa-trash"></i> Delete</a>
-                                </td>
-                            </tr>
-                        <?php } ?>
-                    </tbody>
-
-                </table>
+            <div class="container">
+                <a class="btn btn-primary" href="<?= base_url('datacontroller/form_create') ?>"><i class="fas fa-plus"></i> Create</a>
             </div>
-        </div>
-        <div class="container text-right">
-            <a class="btn btn-primary" href="<?= base_url('datacontroller/form_create') ?>"><i class="fas fa-plus"></i> Create</a>
-        </div><br>
-    </div>
-</div>
-</section>
+
+            <div class="container pt-3">
+
+                <div class="card">
+                    <div class="card-header bg-black text-white">
+                        <h4 class="card-title" style="text-align: center;">Data Nasabah</h4>
+                    </div>
+
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            <table class="table table-bordered table-striped table-hover">
+                                <thead class="table-secondary">
+                                    <tr>
+                                        <th>No</th>
+                                        <th>Nama</th>
+                                        <th>Nomor Rekening</th>
+                                        <th>Saldo</th>
+                                        <th>Bunga</th>
+                                        <th>Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php foreach ($data as $i => $r) { ?>
+                                        <tr>
+                                            <th scope="row"><?= $i + 1; ?></th>
+                                            <td><?= $r['nama']; ?></td>
+                                            <td><?= $r['no_rekening']; ?></td>
+                                            <td>Rp. <?= $r['nominal_uang']; ?>,-</td>
+                                            <td>Rp. 5000,-</td>
+                                            <td>
+                                                <?= csrf_field(); ?>
+                                                <input type="hidden" name="_method" value="Delete">
+                                                <a class="btn btn-warning" href="<?= base_url('datacontroller/form_update/' . $r['id']) ?>"><i class="fas fa-edit"></i> Update</a>
+                                                <a class="btn btn-danger" href="<?= base_url('datacontroller/delete/' . $r['id']) ?>"><i class="fas fa-trash" onclick="return confirm('Apakah anda yakin menghapus Post ini ?'); "></i> Delete</a>
+                                            </td>
+                                        </tr>
+                                    <?php } ?>
+                                </tbody>
+                            </table>
+                        </div>
+
+                    </div>
+                    <br>
+                </div>
+            </div>
+            </section>
 
             <!-- /.content -->
         </div>
