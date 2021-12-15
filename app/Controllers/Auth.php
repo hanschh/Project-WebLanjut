@@ -65,12 +65,26 @@ class Auth extends BaseController
             session()->set($data);
             session()->setFlashdata('pesan', 'Anda telah melakukan Login');
             return redirect()->to(base_url('/dashboard'));
+<<<<<<< HEAD
         }
         else{
             session()->setFlashdata('pesan', 'Email atau Password Salah');
             return redirect()->to(base_url('/'));
         }
         
+=======
+<<<<<<< HEAD
+        } else {
+=======
+        }
+        else{
+>>>>>>> 49f483481eb8efa084aef888374cf875d7069e9a
+            session()->setFlashdata('pesan', 'Email atau Password Salah');
+            return redirect()->to(base_url('/'));
+        }
+        session()->setFlashdata('pesan', 'Email atau Password Salah');
+        return redirect()->to(base_url('/'));
+>>>>>>> 31bac986871cd65e4c64c3f79cd80f0155d55a3e
     }
 
     public function logout()
